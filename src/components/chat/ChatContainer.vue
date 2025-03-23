@@ -50,6 +50,7 @@
     name: 'ChatContainer',
     data() {
       return {
+        apiUrl: import.meta.env.VITE_APP_API_URL,
         messages: [],
         stompClient: null,
         senderKey: Math.random().toString(36).substr(2,11),
@@ -61,7 +62,7 @@
     },
     methods: {
       connect(event) {
-        let socket = new WebSocket('ws://localhost:8080/ws');
+        let socket = new WebSocket('ws://' + this.apiUrl + '/ws');
         this.stompClient  = Stomp.over(socket);
         this.stompClient.connect({}, this.onConnected, this.onError);
       },
@@ -71,7 +72,7 @@
           this.stompClient.disconnect(function (){
             console.log("소켓 연결이 끊어졌습니다.");
 
-            let socket = new WebSocket('ws://localhost:8080/ws');
+            let socket = new WebSocket('ws://' + this.apiUrl + '/ws');
             this.stompClient = Stomp.over(socket);
 
             this.stompClient.connect({}, function() {
@@ -85,7 +86,7 @@
       },
 
       onConnected() {
-        fetch("http://localhost:8080/chat/room", {
+        fetch("http://" + this.apiUrl + "/chat/room", {
           method: "POST"
         })
         .then((res) => {
@@ -165,7 +166,7 @@
         let imgFormData = new FormData();
         imgFormData.append('file', e.target.files[0]);
 
-        fetch('http://localhost:8080/chat/upload/file', {
+        fetch('http://' + this.apiUrl + '/chat/upload/file', {
           method: 'POST',
           body: imgFormData
         })
@@ -214,6 +215,8 @@
           myProfileHtml = "";
           themProfileHtml = `<div class="chat-${senderClass}-profile-img"></div>`;
         }
+
+        file = "http://" + this.apiUrl + file;
 
         let fileMessageHtml = `<div class="chat-${senderClass}">
                                             ${themProfileHtml}
