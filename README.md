@@ -1,29 +1,11 @@
 # chat-client
 
-This template should help get you started developing with Vue 3 in Vite.
+![chat.png](readme_image/chat.png)
+채팅창 이미지
 
-## Recommended IDE Setup
+[API]
+1.Chat API clone 후 실행 시켜야 소켓 통신으로 채팅 가능
+API URI : https://github.com/SolMa98/chat
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+2.ENV 파일 내 API 주소 설정
+ENV 파일 구현 예정
