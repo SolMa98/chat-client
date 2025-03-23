@@ -1,0 +1,253 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.chat-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+}
+
+.chat-container .chat-header {
+    width: 100%;
+    display: flex;
+    height: 10%;
+}
+
+.chat-container .chat-header input {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border: none;
+    line-height: 1.25;
+    font-weight: 700;
+    padding: 1.25rem 0.5rem 1rem 1rem;
+    font-size: 1.5rem;
+    border-radius: 15px 15px 0px 0px;
+}
+
+.chat-container .chat-header input:focus {
+    outline: none;
+}
+
+.chat-container .chat-body {
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    background: white;
+    padding: 10px;
+    overflow-y: auto;
+    gap: 10px;
+}
+
+.chat-body .chat-them {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem;
+}
+
+.chat-body .chat-them .chat-them-profile-img{
+    background-image: url(../../image/user-them.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 9999px;
+    flex-shrink: 0;
+    width: 2.5rem;
+    aspect-ratio: 1 / 1;
+}
+
+.chat-body .chat-them .chat-them-message{
+    gap: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1 1 0;
+}
+
+.chat-body .chat-them .chat-them-message .chat-them-name{
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 13px;
+    max-width: 360px;
+    margin: 0;
+    color: rgb(107 107 107);
+}
+
+.chat-body .chat-them .chat-them-message .chat-them-text{
+    color: rgb(0 0 0);
+    line-height: 1.5;
+    font-weight: 400;
+    font-size: 1rem;
+    padding: 0.75rem 1rem 0.75rem 1rem;
+    margin: 0;
+    border-radius: 0.5rem;
+    background-color: rgb(238 238 238);
+}
+
+.chat-body .chat-them .chat-them-message .chat-them-file{
+    padding: 15px;
+    border-radius: 15px;
+    object-fit: contain;
+    max-width: 300px;
+    background-color: rgb(238 238 238);
+}
+
+.chat-body .chat-me {
+    padding: 1rem;
+    gap: 0.75rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.chat-body .chat-me .chat-me-profile-img{
+    background-image: url(../../image/user-me.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 9999px;
+    flex-shrink: 0;
+    width: 2.5rem;
+    aspect-ratio: 1 / 1;
+}
+
+.chat-body .chat-me .chat-me-message{
+    gap: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex: 1 1 0;
+}
+
+.chat-body .chat-me .chat-me-message .chat-me-name{
+    line-height: 1.5;
+    font-weight: 400;
+    font-size: 13px;
+    max-width: 360px;
+    margin: 0;
+    color: rgb(107 107 107);
+}
+
+.chat-body .chat-me .chat-me-message .chat-me-text{
+    color: rgb(255 255 255);
+    line-height: 1.5;
+    font-weight: 400;
+    font-size: 1rem;
+    padding: 0.75rem 1rem 0.75rem 1rem;
+    background-color: rgb(0 0 0);
+    border-radius: 0.5rem;
+    max-width: 360px;
+    margin: 0;
+}
+
+.chat-body .chat-me .chat-me-message .chat-me-file{
+    padding: 15px;
+    border-radius: 15px;
+    object-fit: contain;
+    max-width: 300px;
+    background-color: rgb(0 0 0);
+}
+
+.chat-container .chat-bottom {
+    container-type: inline-size;
+    gap: 0.75rem;
+    display: flex;
+    align-items: center;
+    height: 10%;
+}
+
+.chat-container .chat-bottom .chat-bottom-label {
+    flex-direction: column;
+    flex: 1 1 0;
+    min-width: 10rem;
+    display: flex;
+    height: 100%;
+}
+
+.chat-container .chat-bottom .chat-bottom-label .chat-bottom-input-section {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex: 1 1 0;
+    align-items: stretch;
+}
+
+.chat-container .chat-bottom .chat-bottom-label .chat-bottom-input-section input{
+    color: rgb(0 0 0);
+    line-height: 1.5;
+    font-weight: 400;
+    font-size: 1rem;
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+    background-color: rgb(238 238 238);
+    border-style: none;
+    border-radius: 0 0 0 0.5rem;
+    resize: none;
+    flex: 1 1 0;
+    display: flex;
+}
+
+.chat-container .chat-bottom .chat-bottom-label .chat-bottom-input-section input:focus {
+    outline: none;
+}
+
+.chat-container .chat-bottom .chat-bottom-label .chat-bottom-input-section .chat-bottom-function-section{
+    padding-right: 0.5rem !important;
+    background-color: rgb(238 238 238);
+    border-radius: 0 0 0.5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chat-container .chat-bottom .chat-bottom-label .chat-bottom-input-section .chat-bottom-function-section .chat-bottom-function{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.chat-container .chat-bottom .chat-bottom-label .chat-bottom-input-section .chat-bottom-function-section .chat-bottom-function .chat-bottom-function-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.chat-container .chat-bottom .chat-bottom-label .chat-bottom-input-section .chat-bottom-function-section .chat-bottom-function .chat-bottom-function-btn button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.375rem;
+    cursor: pointer;
+    border: none;
+}
+
+.chat-container .chat-bottom .chat-bottom-label .chat-bottom-input-section .chat-bottom-function-section .chat-bottom-function .chat-bottom-function-btn button div{
+    color: rgb(107 107 107);
+}
+
+.chat-container .chat-bottom .chat-bottom-label .chat-bottom-input-section .chat-bottom-function-section .chat-bottom-function .chat-bottom-send-btn{
+    color: rgb(255 255 255);
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 0.875rem;
+    padding: 0.2rem 1rem 0.2rem 1rem;
+    background-color: rgb(0 0 0);
+    border-radius: 0.5rem;
+}
+
+.chat-container .chat-bottom .chat-bottom-label .chat-bottom-input-section .chat-bottom-function-section .chat-bottom-function .chat-bottom-send-btn span{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.display-none {
+    display: none !important;
+}
